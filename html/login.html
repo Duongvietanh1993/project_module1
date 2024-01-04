@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Login and Registration Form</title>
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+<div class="container">
+    <div id="form_login" class="form_scope">
+        <h2>Login</h2>
+        <form action="" id="login">
+            <div class="form_group">
+                <label for="userNameLog">Username: </label>
+                <input type="text" placeholder="Vui lòng nhập tài khoản" id="userNameLog">
+                <p class="error-message" id="username-log-error"></p>
+            </div>
+            <div class="form_group">
+                <label for="passwordLog">Password: </label>
+                <input type="password" placeholder="Vui lòng nhập mật khẩu" id="passwordLog">
+                <p class="error-message" id="password-log-error"></p>
+            </div>
+            <div class="btn_group">
+                <button class="btn btn_signup" type="submit">Login</button>
+                <div class="icon">
+                    <div>
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+
+                    </div>
+                    <div>
+                        <a href="#"><i class="fa-brands fa-google"></i></a>
+
+                    </div>
+                    <div>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+
+                    </div>
+                </div>
+                <p class="link" onclick="toggleRegister()">Sign Up</p>
+            </div>
+        </form>
+
+    </div>
+
+    <div id="form_register" class="form_scope hiden">
+        <h2>Register</h2>
+        <form action="" id="register">
+            <div class="form_group">
+                <label for="fullname">Full Name: </label>
+                <input type="text" placeholder="Vui lòng nhập họ tên" id="fullname">
+                <p class="error-message" id="firstname-error"></p>
+            </div>
+            <div class="form_group">
+                <label for="username-reg">Username: </label>
+                <input type="text" placeholder="Vui lòng nhập tên tài khoản" id="username-reg">
+                <p class="error-message" id="username-reg-error"></p>
+            </div>
+            <div class="form_group">
+                <label for="email">Email: </label>
+                <input type="email" placeholder="Vui lòng nhập vào gmail" id="email">
+                <p class="error-message" id="email-error"></p>
+            </div>
+            <div class="form_group">
+                <label for="password-reg">Password: </label>
+                <input type="password" placeholder="Vui lòng nhập mật khẩu" id="password-reg">
+                <p class="error-message" id="password-reg-error"></p>
+            </div>
+            <div class="form_group">
+                <label for="confirm-password">Confirm Password: </label>
+                <input type="password" placeholder="Vui lòng xác nhận lại mật khẩu" id="confirm-password">
+                <p class="error-message" id="confirm-password-error"></p>
+            </div>
+            <div class="form_group img_scope">
+                <label>Avatar:</label>
+                <div>
+                    <label for="avatar" class="label_avatar btn">Upload</label>
+                    <input type="file"  id="avatar" hidden>
+                </div>
+                <img src="" id="avatar-preview">
+            </div>
+            <div class="btn_group">
+                <p></p>
+                <div class="btn_btn">
+                    <button class="btn btn_cancel" type="reset">Cancel</button>
+                    <button class="btn btn_signup" type="submit">Sign Up</button>
+                </div>
+                <p class="link" onclick="toggleRegister()">Login</p>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="../js/login.js"></script>
+</body>
+</html>

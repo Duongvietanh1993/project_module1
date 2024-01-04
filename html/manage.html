@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manage Project Modul 1</title>
+    <link rel="stylesheet" href="../css/manage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+
+</head>
+<body>
+<table>
+    <tr class="hover_tap_bar">
+        <td class="tap_bar" rowspan="2">
+            <div class="tap_bar_manage">
+                <div class="name">
+                    <i class="fa-brands fa-microsoft"></i><span>Administrator</span>
+                </div>
+                <hr>
+                <div class="userName">
+                    <div>
+                        <img src="../image/avata/zaiross.jpg" class="avatar" id="load_img">
+                        <span id="load_name">Xin chào !</span>
+                    </div>
+                    <ul>
+                        <li>
+                            <a id="setting_user" href="#"> <i class="fa-solid fa-gear"></i></a>
+                            <ul>
+                                <li class="popup_text"><a href="#">Tài Khoản</a></li>
+                                <hr>
+                                <li class="popup_text"><a href="#" onclick="clickLogout(event)">Đăng Xuất</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <hr>
+                <div class="search_manage">
+                    <input type="text" placeholder="Search">
+                    <button type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+                <nav class="list_tap_manage">
+                    <ul>
+                        <li>
+                            <div>
+                                <i class="fa-solid fa-users-gear"></i>
+                                <a href="#" onclick="toggleTableUser()">Quản lý người dùng</a>
+                            </div>
+                            <div class="icon">
+                                <p>28</p>
+                                <i class="fa-solid fa-angle-left"></i>
+                            </div>
+
+                        </li>
+                        <li>
+                            <div>
+                                <i class="fa-brands fa-product-hunt"></i>
+                                <a href="#" onclick="toggleTableProduct()">Quản lý sản phẩm</a>
+                            </div>
+                            <i class="fa-solid fa-angle-left"></i>
+                        </li>
+                        <li>
+                            <div>
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                <a href="#" onclick="toggleTableOrder()">Quản lý đơn hàng</a>
+                            </div>
+                            <div class="icon_bf">
+                                <p>4</p>
+                                <i class="fa-solid fa-angle-left"></i>
+                            </div>
+
+                        </li>
+                        <li>
+                            <div>
+                                <i class="fa-solid fa-address-book"></i>
+                                <a href="#" onclick="toggleTableCategory()">Quản lý danh mục</a>
+                            </div>
+                            <i class="fa-solid fa-angle-left"></i>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </td>
+        <td class="home_bar">
+            <div class="table_manage">
+                <nav>
+                    <div class="table_manage_home">
+                        <a href="#"><i class="fa-solid fa-bars"></i></a>
+                        <a href="../index.html">Home</a>
+                        <a href="../index.html">Contact</a>
+                    </div>
+                    <div class="table_manage_icon">
+                        <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+                        <a href="#"><i class="fa-regular fa-comments"></i><sup>6</sup></a>
+                        <a href="#"><i class="fa-regular fa-bell"></i><sup>14</sup></a>
+                        <a href="#"><i class="fa-solid fa-maximize"></i></a>
+                        <a href="#"><i class="fa-brands fa-microsoft"></i></a>
+                    </div>
+                </nav>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="container">
+            <div class="container_product_hide">
+                <div id="product_hide" class="hide">
+                    <div class="table_manage_top">
+                        <p>Danh sách sản phẩm</p>
+                        <div class="table_manage_top_one">
+                            <p>Home</p>
+                            <span>/</span>
+                            <a href="#">Danh sách sản phẩm</a>
+                        </div>
+                    </div>
+                    <!--*-->
+                    <div class="search_add_scope">
+                        <button class="btn_form" onclick="toggleForm()">Thêm sản phẩm</button>
+                        <div class="search_manage">
+                            <input type="text" id="input_search_product" placeholder="Nhập vào tên muốn tìm kiếm">
+                            <button onclick="searchManage()"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        </div>
+                    </div>
+                    <!--*-->
+                    <table class="table_list product_list">
+                        <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Product Name
+                                <button onclick="sortByLetter()"><i class="fa-solid fa-arrow-down-a-z"></i></button>
+                            </th>
+                            <th>Image Product</th>
+                            <th>Price
+                                <button onclick="sortUpAscending()"><i class="fa-solid fa-arrow-down-short-wide"></i>
+                                </button>
+                                <button onclick="sortDescending()"><i class="fa-solid fa-arrow-up-wide-short"></i>
+                                </button>
+
+                            </th>
+                            <th>Quantity</th>
+                            <th>Product Info</th>
+                            <th>Product Category</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+                        <tbody id="displayProduct">
+
+                        </tbody>
+                    </table>
+                    <div class="pagination" id="pagination-container">
+
+                    </div>
+                </div>
+
+
+                <!--*-->
+                <div id="form_scope" class="hide">
+                    <form action="" id="form">
+                        <h2>Thông tin sản phẩm</h2>
+                        <div>
+                            <label for="name">Product Name: </label>
+                            <input id="name" type="text" placeholder="Vui lòng nhập tên sản phẩm !" required>
+                        </div>
+                        <div>
+                            <label for="price">Price: </label>
+                            <input id="price" type="number" placeholder="Vui lòng nhập giá tiền của sản phẩm !"
+                                   required>
+                        </div>
+                        <div class="review_img">
+                            <label for="img" id="customLabel">Image Producth: </label>
+                            <div>
+                                <input id="img" type="file">
+                                <img src="" id="img-preview">
+                            </div>
+
+                        </div>
+
+                        <div>
+                            <label for="quantity">Quantity: </label>
+                            <input id="quantity" type="number" placeholder="Vui lòng nhập vào số lượng của sản phẩm !"
+                                   required>
+                        </div>
+                        <div>
+                            <label for="product_info">Product Info: </label>
+                            <textarea id="product_info" placeholder="Vui lòng nhập vào thông tin của sản phẩm !"
+                                      required>
+                            </textarea>
+                        </div>
+                        <div>
+                            <label for="category_option">Category Product: </label>
+                            <select id="category_option">
+
+                            </select>
+                        </div>
+                        <div class="btn_scope">
+                            <button class="btn btn_delete" type="button" onclick="toggleForm()">Hủy</button>
+                            <button class="btn btn_save" type="submit">Thêm</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!--* * * * *-->
+            <div class="container_user_hide">
+                <div id="user_hide" class="hide">
+                    <div class="table_manage_top">
+                        <p>Danh sách người dùng</p>
+                        <div class="table_manage_top_one">
+                            <p>Home</p>
+                            <span>/</span>
+                            <a href="#">Danh sách người dùng</a>
+                        </div>
+                    </div>
+                    <!--*-->
+                    <div class="search_add_scope">
+                        <p></p>
+                        <div class="search_manage">
+                            <input type="text" id="input_search_user" placeholder="Nhập vào tên muốn tìm kiếm">
+                            <button onclick="searchUser()" id="searchUser"><i class="fa-solid fa-magnifying-glass"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!--*-->
+                    <table class="table_list user_list">
+                        <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Full Name</th>
+                            <th>Image User</th>
+                            <th>Email</th>
+                            <th>User Name</th>
+                            <th>Password</th>
+                            <th>Role</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+                        <tbody id="displayUser">
+
+                        </tbody>
+                    </table>
+                    <div class="pagination" id="pagination-container-user">
+
+                    </div>
+                </div>
+            </div>
+            <!--* * * * *-->
+            <div class="container_category_hide">
+                <div id="category_hide" class="hide">
+                    <div class="table_manage_top">
+                        <p>Danh mục sản phẩm</p>
+                        <div class="table_manage_top_one">
+                            <p>Home</p>
+                            <span>/</span>
+                            <a href="#">Danh mục sản phẩm</a>
+                        </div>
+                    </div>
+                    <!--*-->
+                    <div class="search_add_scope">
+                        <button class="btn_form" onclick="toggleFormCategory()">Thêm Danh Mục</button>
+                        <div class="search_manage" style="visibility: hidden">
+                            <input type="text" id="searchInput" placeholder="Nhập vào tên danh mục ">
+                            <button id="searchButton"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        </div>
+                    </div>
+                    <!--*-->
+                    <table class="table_list category_list">
+                        <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Category Product</th>
+                            <th>Category Image</th>
+                            <th>Category Description</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+                        <tbody id="displayCategory">
+
+                        </tbody>
+                    </table>
+                    <div class="pagination" id="pagination-container-category">
+
+                    </div>
+                </div>
+                <!--*-->
+                <div id="form_scope_category" class="hide">
+                    <form action="" id="form_category">
+                        <h2>Thông tin danh mục</h2>
+                        <div>
+                            <label for="categoryName">Category Product: </label>
+                            <input id="categoryName" type="text" placeholder="Vui lòng nhập tên danh mục">
+                        </div>
+                        <div class="review_img">
+                            <label for="img" id="customLabel-category">Image Producth: </label>
+                            <input id="img_category" type="file">
+                        </div>
+                        <div>
+                            <label for="description">Description: </label>
+                            <textarea id="description" type="text"
+                                      placeholder="Vui lòng nhập chú thích danh mục!"></textarea>
+                        </div>
+                        <div class="btn_scope">
+                            <button class="btn btn_delete" type="button" onclick="toggleFormCategory()">Hủy</button>
+                            <button class="btn btn_save" type="submit" onclick="addCategory()">Thêm</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!--* * * * *-->
+            <div class="container_cart_hide">
+                <div id="cart_hide" class="hide">
+                    <div class="table_manage_top">
+                        <p>Quản Lý đơn hàng</p>
+                        <div class="table_manage_top_one">
+                            <p>Home</p>
+                            <span>/</span>
+                            <a href="#">Quản lý đơn hàng</a>
+                        </div>
+                    </div>
+                    <!--*-->
+                    <div class="search_add_scope">
+                        <p></p>
+                        <div class="search_manage">
+                            <input type="text" id="input_search_cart" placeholder="Nhập vào tên danh mục ">
+                            <button onclick="searchOrder()" id="searchCart"><i
+                                    class="fa-solid fa-magnifying-glass"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!--*-->
+                    <table class="table_list cart_list">
+                        <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Order Name</th>
+                            <th>Ghi Chú</th>
+                            <th>Tổng Tiền Đơn Hàng</th>
+                            <th>Tình Trạng</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+                        <tbody id="displayOrder">
+
+                        </tbody>
+                    </table>
+                </div>
+                <!--*-->
+                <div id="form_scope_order" class="hide">
+
+                </div>
+            </div>
+
+        </td>
+    </tr>
+</table>
+</body>
+</html>
+
+<script src="../js/manageProduct.js"></script>
+<script>
+    showManageProduct();
+</script>
+<script src="../js/manageUser.js"></script>
+<script src="../js/manageCategory.js"></script>
+<script src="../js/manageOrder.js"></script>
+<script>
+    showOrderDetail();
+</script>

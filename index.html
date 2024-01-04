@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Project Modul 1</title>
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+
+
+
+</head>
+<body onload="showTime()">
+<aside>
+    <p>nhập mã blackfriday để giảm 10%</p>
+    <div class="time_phone">
+        <p><i class="fa-regular fa-clock"></i> <span id="clock"></span></p>
+        <div class="vertical"></div>
+        <p><i class="fa-solid fa-phone"></i> <span>0363304513</span></p>
+    </div>
+    <div class="icon">
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+</aside>
+<header>
+    <div class="tap_bar">
+        <div class="login_search">
+            <img src="image/logo/Group%209.png" width="350" height="100">
+            <div class="icon_input">
+                <input type="search" placeholder="Tìm kiếm sản phẩm" id="input_search_home">
+                <button type="button" onclick="searchHome()"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+            <div class="login">
+                <div id="user_show_home">
+                    <h2 id="load_name">Xin chào</h2>
+                    <img id="load_img" src="" alt="Avatar">
+                    <ul>
+                        <li>
+                            <a id="setting_user" href=""><i class="fa-solid fa-gear"></i></a>
+                            <ul>
+                                <li class="popup_text"><a href="./html/login.html">Tài Khoản</a></li>
+                                <hr>
+                                <li class="popup_text"><a href="" onclick="clickLogoutHome(event)">Đăng Xuất</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    </div>
+                    <div class="vertical"></div>
+                <h2>
+                    <a href="html/cartShoping.html"><i class="fa-sharp fa-solid fa-bag-shopping"></i>
+                        <sup id="count_number">0</sup>
+                    </a>
+                </h2>
+            </div>
+        </div>
+        <!--*-->
+        <nav>
+            <ul>
+                <li class="tap_bar_text"><a href="#">
+                    <i class="fa-solid fa-house"></i>
+                    trang chủ
+                </a>
+                </li>
+                <li><a href="#">cửa hàng <i class="fa-solid fa-bars"></i></a>
+                    <ul id="listHomeCategory">
+
+                    </ul>
+                </li>
+                <li class="tap_bar_text"><a href="https://dantri.com.vn/">bài viết</a></li>
+                <li class="tap_bar_text"><a href="html/introduce.html">giới thiệu</a></li>
+                <li class="tap_bar_text"><a href="html/contact.html">liên hệ</a></li>
+            </ul>
+        </nav>
+    </div>
+
+</header>
+<nav class="background_home">
+    <div class="text_flex">
+        <h2>siêu sale mừng sinh nhật</h2>
+        <h1 id="text_sale">Apple Watch Series 8</h1>
+        <h3>Giảm ngay 1 triệu đồng từ 1/8-30/8</h3>
+        <a href="#"><h3>Xem ngay</h3><i class="fa-solid fa-chevron-right"></i></a>
+    </div>
+    <div class="arrow_down">
+        <button onclick="scrollToTarget()"><i class="fa-solid fa-angles-down"></i></button>
+    </div>
+</nav>
+<!--*-->
+<div id="targetLine"></div>
+<!--*-->
+<main>
+    <nav class="main_top">
+        <a href="#">
+            <div class="box _one">
+                <h1>smart Watch</h1>
+                <p>Giảm 50%</p>
+            </div>
+        </a>
+        <a href="#">
+            <div class="box _two">
+                <h1>mac-macbook</h1>
+                <p>Giảm 10%</p>
+            </div>
+        </a>
+        <a href="#">
+            <div class="box _three">
+                <h1>apple airpods</h1>
+                <p>Giảm 20%</p>
+            </div>
+        </a>
+    </nav>
+
+    <!--*-->
+    <h1 class="section-title">
+        <b></b>
+        <span>Sản phẩm đang bán</span>
+        <b></b>
+    </h1>
+    <!--*-->
+    <div class="popup_fixed">
+        <div class="listProducts" id="displayProduct">
+
+
+        </div>
+    </div>
+    <!--*-->
+    <h1 class="section-title section-title-discount">
+        <b></b>
+        <span>Giảm giá sốc</span>
+        <b></b>
+    </h1>
+    <!--*-->
+    <div class="box_listDiscount">
+        <div class="listProducts" id="displayDiscount">
+
+        </div>
+    </div>
+    <!--*-->
+    <h1 class="section-title section-title-category">
+        <b></b>
+        <span>Danh mục sản phẩm</span>
+        <b></b>
+    </h1>
+    <!--*-->
+    <div class="listProducts" id="displayCategory">
+
+    </div>
+    <!--*-->
+    <div id="form_scope_categoryProduct" class="hide">
+        <h1>sản phẩm phân loại </h1>
+        <div class="form_search_home">
+            <div class="btn_home">
+                <button onclick="filterProductsByCategory(1, 'ascending')"><i class="fa-solid fa-arrow-down-short-wide"></i>
+                </button>
+                <button onclick="filterProductsByCategory(1, 'descending')"><i class="fa-solid fa-arrow-up-wide-short"></i>
+                </button>
+            </div>
+            <div class="search_manage">
+                <input type="text" id="input_search_product searchInput" placeholder="Nhập vào tên muốn tìm kiếm">
+                <button id="searchButton"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+        </div>
+        <hr>
+
+        <div class="listProducts" id="displayCategoryFilter">
+
+        </div>
+        <button class="form_back" onclick="toggleCategoryProduct()" >Quay Lại Trang Home</button>
+    </div>
+
+    <!--*-->
+    <div class="information_note">
+        <div class="divNote delivery">
+            <i class="fa-solid fa-truck-fast"></i>
+            <h3>Giao Hàng Toàn Quốc</h3>
+            <p>Ship COD toàn quốc. Nhận hàng trong vòng</p>
+            <p>2-3 ngày</p>
+        </div>
+        <div class="vertical"></div>
+        <div class="divNote return_goods">
+            <i class="fa-solid fa-arrows-rotate"></i>
+            <h3>Đổi Trả Miễn Phí</h3>
+            <p>Xem hàng trước khi nhận. Hoàn trả miễn</p>
+            <p>phí nếu không hài lòng</p>
+        </div>
+        <div class="vertical"></div>
+        <div class="divNote product_warranty">
+            <i class="fa-solid fa-house"></i>
+            <h3>Bảo Hành 1 năm</h3>
+            <p>Bảo hành 1 năm. Lỗi 1 đổi 1 tất cả các sản</p>
+            <p>phẩm của Apple</p>
+        </div>
+    </div>
+    <!--*-->
+    <div class="reviews">
+        <h1>Đánh giá của khách hàng</h1>
+        <div class="box_reviews">
+            <div class="box_chat">
+                <img src="image/avata/xinh1.jpg">
+                <div class="star">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                </div>
+                <p>Mình là người khá kỹ tính trong việc</p>
+                <p>mua hàng, mà shop này lại làm mình vui</p>
+                <p>khi mua hàng thì là một thành công lớn</p>
+                <p>của shop này rồi đấy.</p>
+                <h3>MeoMéoMeo</h3>
+            </div>
+            <div class="box_chat">
+                <img src="image/avata/xinh2.jpg">
+                <div class="star">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                </div>
+                <p>Lần đầu tiên mua hàng online nên là có</p>
+                <p> hơi lo lo, cứ sợ bị lừa. Nhưng đỡ cái</p>
+                <p>là shop này hỗ trợ cho mình rất tận tình</p>
+                <p>luôn nên cũng yên tâm được phần nào.</p>
+                <h3>GâuGấuGâu</h3>
+            </div>
+            <div class="box_chat _three">
+                <img src="image/avata/NXD_1824.jpg">
+                <div class="star">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+
+                </div>
+                <p>Sản phẩm trên cả tuyệt vời luôn ạ,</p>
+                <p> mình mua đến nay đã là 10 sản phẩm</p>
+                <p>ở shop này để cho họ hàng mình dùng</p>
+                <p>rồi nó vô cùng bền lắm luôn.</p>
+                <h3>OeOéOe</h3>
+            </div>
+        </div>
+    </div>
+    <!--*-->
+    <h1 class="section-title">
+        <b></b>
+        <span>Kinh nghiệm hay</span>
+        <b></b>
+    </h1>
+    <!--*-->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <a href="https://tonycongmmo.com/so-sanh-apple-watch-series-6-voi-watch-series-5/">
+                    <img src="image/sosanh.png">
+                    <h6>So sánh Apple Watch Series 8 với Apple Watch Series 7</h6>
+                </a>
+            </div>
+            <div class="swiper-slide">
+                <a href="https://tonycongmmo.com/top-10-dien-thoai-smartphone-dang-mua-nhat-nam-2020/">
+                    <img src="image/top10.png">
+                    <h6>Top 10 điện thoại Smartphone đáng mua nhất năm 2023</h6>
+                </a>
+            </div>
+            <div class="swiper-slide">
+                <a href="https://tonycongmmo.com/so-sanh-apple-watch-series-6-voi-watch-series-5/">
+                    <img src="image/macvslap.png">
+                    <h6>So sánh MacBook Pro và MacBook Air,nên mua loại nào?</h6>
+                </a>
+            </div>
+            <div class="swiper-slide">
+                <a href="https://tonycongmmo.com/cach-cai-nhac-chuong-cho-iphone-bang-itunes-don-gian-nhanh-chong/">
+                    <img src="image/nhac.png">
+                    <h6>Cách cài nhạc chuông cho Iphone bằng ITunes đơn giản</h6>
+                </a>
+            </div>
+            <div class="swiper-slide">
+                <a href="https://tonycongmmo.com/so-sanh-apple-watch-series-6-voi-watch-series-5/">
+                    <img src="image/sosanh.png">
+                    <h6>So sánh Apple Watch Series 8 với Apple Watch Series 7</h6>
+                </a>
+            </div>
+            <div class="swiper-slide">
+                <a href="https://tonycongmmo.com/top-10-dien-thoai-smartphone-dang-mua-nhat-nam-2020/">
+                    <img src="image/top10.png">
+                    <h6>Top 10 điện thoại Smartphone đáng mua nhất năm 2023</h6>
+                </a>
+            </div>
+            <div class="swiper-slide">
+                <a href="https://tonycongmmo.com/so-sanh-apple-watch-series-6-voi-watch-series-5/">
+                    <img src="image/macvslap.png">
+                    <h6>So sánh MacBook Pro và MacBook Air,nên mua loại nào?</h6>
+                </a>
+            </div>
+            <!--*-->
+        </div>
+    </div>
+</main>
+<footer>
+    <div class="scroll_top">
+        <button onclick="scrollToTop()" id="scrollBtn"><i class="fa-solid fa-angles-up"></i></button>
+    </div>
+    <div class="footer_brg"></div>
+    <div class="footer_end">
+        <div class="address_id">
+            <img src="image/logo/Group%2010.png" width="350" height="100">
+            <h3>Cứ có tiền là làm !</h3>
+            <p><i class="fa-solid fa-location-dot"></i> <span> Số 56B Ngõ 896,đường Nguyễn Khoái,Thanh Trì,<br>Hoang Mai,Hà Nội</span>
+            </p>
+            <p><i class="fa-solid fa-mobile-screen-button"></i> 036.330.4513 - 0973.903.986</p>
+            <p><i class="fa-solid fa-envelope"></i> kts.duongvietanh@gmail.com</p>
+            <div class="footer_icon">
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-google-plus-g"></i>
+                <i class="fa-brands fa-youtube"></i>
+            </div>
+        </div>
+        <!--*-->
+        <div class="policy">
+            <h2>quy đinh & chính sách</h2>
+            <a href="#">Quy định đổi trả hàng hóa</a>
+            <a href="#">Quy định bảo hành hàng mới</a>
+            <a href="#">Quy định bảo hành hàng cũ</a>
+            <a href="#">Chính sách bảo mật</a>
+            <img src="image/bct.png" width="180px">
+        </div>
+        <!--*-->
+        <div class="address_show">
+            <h2>địa chỉ cửa hàng</h2>
+            <p>Chi nhánh Hà Nội:</p>
+            <p>Số 1, Hàng Đào</p>
+            <p>Chi nhánh HCM:</p>
+            <p>Tầng 1, Landmark 81</p>
+            <p>Chi nhánh Đà Nẵng:</p>
+
+        </div>
+    </div>
+    <!--*-->
+    <div class="end">
+        <p>Copyright © 2023 <span>Grin</span> Rights reserved | Thiết kế website</p>
+    </div>
+</footer>
+
+
+</body>
+</html>
+<script src="js/login.js"></script>
+<script>
+    loadInfo();
+</script>
+
+<script src="js/manageProduct.js"></script>
+<script>
+    showDiscountHome();
+</script>
+<script src="js/manageCategory.js"></script>
+<script>
+    printInterface()
+</script>
+<script>
+    filterProductsByCategory()
+</script>
+<script>
+    printListHome();
+</script>
+<script src="js/addCart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script src="js/home.js"></script>
+
+
+

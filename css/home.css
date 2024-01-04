@@ -1,0 +1,1237 @@
+* {
+    box-sizing: border-box;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+
+@media only screen and (max-width: 600px) {
+
+}
+
+@media only screen and (min-width: 600px) {
+    /*Thanh quảng cáo 1*/
+    aside {
+        display: flex;
+        justify-content: space-evenly;
+        gap: 5rem;
+        align-items: center;
+        background: #1e1d25;
+        color: white;
+        text-transform: uppercase;
+    }
+
+    aside p {
+        font-size: 1rem;
+    }
+
+    aside .time_phone {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    aside .time_phone span {
+        color: rgba(255, 255, 255, 0.63);
+    }
+
+    aside .time_phone p {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: .7rem;
+        font-size: 1rem;
+    }
+
+    aside .time_phone i {
+        font-size: 1.2rem;
+    }
+
+    aside .vertical {
+        background: gray;
+        width: .01rem;
+    }
+
+    aside .icon i {
+        scale: 60%;
+        padding: .1rem .5rem;
+    }
+
+    aside .icon a .fa-youtube {
+        padding: 0;
+    }
+
+    aside .icon a .fa-instagram {
+        padding: 0 .15rem;
+    }
+
+    aside .icon a .fa-tiktok {
+        padding: 0 .15rem;
+    }
+
+    aside .icon a {
+        background-color: #fff;
+        text-align: center;
+        font-size: 35px;
+        margin: 0 5px;
+        border-radius: .6rem;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+    }
+
+    aside .icon a i {
+        position: relative;
+        color: #262626;
+        transition: .5s;
+        z-index: 3;
+    }
+
+    aside .icon a:nth-child(1):hover i {
+        color: rgb(5, 114, 230);
+        transform: rotateY(360deg);
+        scale: .8;
+    }
+
+    aside .icon a:nth-child(2):hover i {
+        color: #f57007;
+        transform: rotateY(360deg);
+        scale: .8;
+    }
+
+    aside .icon a:nth-child(3):hover i {
+        color: rgba(0, 0, 0, 0.75);
+        text-shadow: 1px 1px 2px #ff2424;
+
+        transform: rotateY(360deg);
+        scale: .8;
+    }
+
+    aside .icon a:nth-child(4):hover i {
+        color: rgb(253, 1, 2);
+        transform: rotateY(360deg);
+        scale: .8;
+    }
+
+    aside .icon {
+        padding: .5rem;
+    }
+
+
+    /*Phần đăng nhập và tìm kiếm*/
+    .tap_bar {
+        transition: top 1s;
+    }
+
+    .tap_bar.sticky {
+        position: fixed;
+        top: 0;
+        z-index: 5;
+        width: 100%;
+        animation: fadeInDown 0.3s;
+        background: #ffffff;
+        border-bottom: 1px solid #0d0c11;
+        box-shadow: 2px 0 20px 5px #444444;
+    }
+
+    header .login_search {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        padding-top: .3rem;
+        margin: 0 8rem;
+    }
+
+    header .icon_input {
+        display: flex;
+        justify-content: right;
+        align-items: center;
+    }
+
+    header .icon_input input {
+        padding: .5rem;
+        padding-right: 30rem;
+        font-size: 1rem;
+        border-radius: 1.2rem;
+        background: rgba(234, 234, 234, 0.39);
+        position: relative;
+        border: 1px solid #b7b7b7;
+    }
+
+    header .icon_input button {
+        position: absolute;
+        padding: 0 1rem;
+        font-size: 1.4rem;
+        color: rgba(0, 0, 0, 0.32);
+        border: none;
+        background: none;
+
+    }
+
+    header .icon_input button:hover {
+        color: rgba(0, 0, 0, 0.75);
+        scale: 110%;
+    }
+
+    header .login {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    header .login #user_show_home {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: .5rem;
+    }
+
+    header .login #user_show_home h2 {
+        font-size: 1.2rem;
+        color: #3e3e48;
+    }
+
+    header .login #user_show_home img {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+    }
+
+    header .login ul li #setting_user i:hover {
+        scale: 110%;
+    }
+
+    header #user_show_home ul ul {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        background: #dddddd;
+        padding: 1rem .5rem !important;
+        margin: 2.3rem .8rem 0 0;
+        width: 8.5rem;
+        gap: .5rem;
+        border: 2px solid #808080;
+        border-top-left-radius: 1rem;
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        transition: all .2s;
+        visibility: hidden;
+        z-index: 5;
+
+    }
+
+    header .login #user_show_home ul li:hover ul {
+        visibility: visible;
+        z-index: 1;
+    }
+
+
+    header .login #user_show_home ul li {
+        display: flex;
+        justify-content: right;
+        align-items: start;
+
+    }
+
+    header #user_show_home ul ul a {
+        text-transform: none;
+    }
+
+    header .vertical {
+        background: gray;
+        width: .01rem;
+        height: 2rem;
+    }
+
+    header .login a {
+        color: rgba(43, 43, 55, 0.88);
+        text-transform: uppercase;
+        font-size: 1.2rem;
+        font-weight: 550;
+    }
+
+    header .login a:hover {
+        color: #16151b;
+    }
+
+    header .login i {
+        font-size: 1.7rem;
+    }
+
+    header .login sup {
+        background: #ff2424;
+        color: white;
+        border: .1px solid #fdfdfe;
+        border-radius: 50%;
+        padding: .1rem .3rem;
+        margin: 0 .1rem;
+        transition: all .5s
+    }
+
+    header .login sup:hover {
+        background: white;
+        color: #ff2424;
+        border: .1px solid #ff2424;
+    }
+
+    header .login h2 a i {
+        scale: 120%;
+    }
+
+    header .login h2 a i:hover {
+        scale: 130%;
+        color: black;
+    }
+
+    /*Thanh tab bar*/
+    header nav ul {
+        display: flex;
+        justify-content: center;
+        gap: 4rem;
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 1.4rem;
+        padding: .7rem 0;
+    }
+
+    header nav ul:nth-child(2) {
+        display: flex;
+        justify-content: left;
+        align-items: start;
+    }
+
+    header li a {
+        text-decoration: none;
+        color: rgb(62, 62, 72);
+    }
+
+    header li:hover {
+        color: #15131a;
+    }
+
+    header nav ul ul {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        background: #dddddd;
+        padding: 1rem .5rem !important;
+        margin: .7rem 0;
+        width: 9.5rem;
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        gap: .5rem;
+        border: 2px solid #17161c;
+        transition: all .2s;
+        visibility: hidden;
+        z-index: 5;
+    }
+
+    header ul ul li a {
+        text-transform: none;
+        font-weight: normal !important;
+        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+    }
+
+    header ul hr {
+        height: 1px;
+        background: rgba(255, 255, 255, 0.07);
+        width: 100%;
+        opacity: .5;
+    }
+
+    header ul li:hover ul {
+        visibility: visible;
+        color: #e15656;
+        z-index: 1;
+    }
+
+    header ul .tap_bar_text a:hover {
+        color: #ff6a56;
+    }
+
+    header ul li ul li {
+        padding: .2rem .3rem;
+    }
+
+    header ul ul .popup_text:hover {
+        background: #292a36;
+        width: 100%;
+        scale: 110%;
+        border-radius: .4rem;
+        color: white;
+    }
+
+    header ul ul .popup_text a:hover {
+        color: white;
+    }
+
+    /*trang bìa*/
+    .background_home {
+        background-image: url("../image/dongho.jpg");
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position: right;
+        backdrop-filter: revert;
+        background-size: cover;
+        height: 450px;
+        color: white;
+        position: relative;
+        transition: all .5s;
+    }
+
+    .background_home .nav_text {
+        width: 40%;
+        background: #e15656;
+        z-index: 999;
+    }
+
+    .background_home .text_flex {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        top: 25%;
+        left: 15%;
+        right: 50%;
+    }
+
+    .background_home .text_flex h2 {
+        text-transform: uppercase;
+        font-size: 1.6rem;
+    }
+
+    .background_home .text_flex h1 {
+        font-size: 3.3rem;
+    }
+
+    .background_home .text_flex h3 {
+        font-size: 1.1rem;
+    }
+
+    .background_home .text_flex a {
+        color: white;
+        background: transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        border: 4px solid white;
+        padding: .5rem;
+        border-radius: .5rem;
+        position: absolute;
+        top: 120%;
+    }
+
+    .background_home .text_flex a:hover {
+        color: rgb(0, 0, 0);
+        background: white;
+    }
+
+    .background_home .arrow_down i {
+        color: rgba(255, 255, 255, 0.63);
+        position: absolute;
+        font-size: 2rem;
+        bottom: 5%;
+        left: 50%;
+
+    }
+
+    .background_home .arrow_down button {
+        background: transparent;
+    }
+
+    .background_home .arrow_down i:hover {
+        color: white;
+    }
+
+
+    /*hướng trang*/
+    main .main_top {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 3rem;
+        gap: 2.5rem;
+    }
+
+    main .main_top .box {
+        border: 8px solid #2e2e3b;
+        padding: 3rem 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: .5rem;
+        text-transform: uppercase;
+        color: white;
+        font-size: 1.2rem;
+    }
+
+    main .main_top .box p {
+        font-size: 1.3rem;
+    }
+
+    main .main_top ._one {
+        background-image: url("../image/Watch.jpg");
+        background-position: center;
+        background-size: cover;
+        transition: all .1s;
+    }
+
+    main .main_top ._one:hover {
+        border: 5px solid #ff6a56;
+    }
+
+    main .main_top ._two {
+        background-image: url("../image/hp.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        transition: all .1s;
+    }
+
+    main .main_top ._two:hover {
+        border: 5px solid #ff6a56;
+    }
+
+    main .main_top ._three {
+        background-image: url("../image/tainghe.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        transition: all .1s;
+    }
+
+    main .main_top ._three:hover {
+        border: 5px solid #ff6a56;
+    }
+
+    /*sản phẩm bán chay*/
+    .section-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin: 4rem 25rem 1rem;
+        text-transform: uppercase;
+    }
+
+    .section-title b {
+        display: block;
+        flex: 1;
+        height: 2px;
+        opacity: .1;
+        background-color: currentColor;
+    }
+
+    .section-title span {
+        margin: 0 2rem;
+        font-size: 1.5rem;
+    }
+
+    .section-title-discount {
+        margin-bottom: 2rem;
+    }
+
+    .section-title-category {
+        margin-top: 3rem;
+    }
+
+    /*sản phẩm*/
+    main .listProducts {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        padding: 0 20rem;
+    }
+
+    .listProducts .popup-overlay p{
+        line-height: 30px;
+    }
+    main .listProducts .product img {
+        width: 20rem;
+    }
+    main .listProducts .product h4{
+        color: #ec6d12;
+    }
+
+    main .listProducts .product {
+        width: 25%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: .5rem;
+    }
+
+    main .listProducts .product .popup_img img {
+        transition: all .8s;
+    }
+
+    main .listProducts .product .popup_img img:hover {
+        transform: scale(1.1);
+    }
+
+    main .listProducts .product .popup_img {
+        position: relative;
+    }
+
+    main .listProducts .product .popup_img p {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 1%;
+        padding: 1rem .5rem;
+        font-size: 1.1rem;
+        color: white;
+        text-transform: uppercase;
+        font-weight: bold;
+        background: rgb(40, 41, 53);
+        opacity: 0;
+        border-radius: .3rem;
+        transition: opacity .5s;
+    }
+
+    main .listProducts .product .popup_img:hover p {
+        opacity: .7;
+    }
+
+    main .listProducts .product .money p {
+        text-decoration: line-through;
+    }
+
+    main .listProducts .product .money {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    main .listProducts .product p {
+        font-size: 1.1rem;
+    }
+
+    main .listProducts .product .money p {
+        font-size: 1rem;
+    }
+
+    main .listProducts .product button {
+        background: transparent;
+        border-radius: .3rem;
+        padding: .5rem;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+
+    main .listProducts .product button:hover {
+        background: #292b39;
+        color: white;
+    }
+
+    .popup-overlay .money p {
+        text-decoration: line-through;
+    }
+
+    .popup-overlay .money {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+
+    }
+    .popup-overlay button{
+        font-size: 1.2rem;
+
+    }
+
+    .popup_fixed .popup-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 130%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 6;
+    }
+
+    .popup_fixed .popup-content {
+        position: absolute;
+        top: 50%;
+        left: 40%;
+        transform: translate(-50%, -50%);
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 5px;
+        text-align: center;
+    }
+
+    .popup_fixed .close-button {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .popup_fixed button {
+        padding: .5rem 1rem;
+        background-color: transparent;
+        color: #1c1c1c;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .popup_fixed button:hover{
+        border: 1px solid #1ea2ff;
+        box-shadow: inset 0 0 10px 2px #1ea2ff;
+        color: #1ea2ff;
+    }
+
+    .popup_fixed button.view-button {
+        margin-top: 10px;
+    }
+
+    .popup_fixed .listProducts .popup-overlay img {
+        width: 20rem;
+        scale: 170%;
+        margin:0 3rem 3rem;
+    }
+
+    .popup_fixed .listProducts {
+        position: relative;
+    }
+
+
+    .product-container {
+        display: flex;
+        align-items: center;
+        max-width: 100rem;
+        margin: 0 auto;
+        background-color: #fff;
+        border-radius: 5rem;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-image {
+        flex: 0 0 40%;
+        padding: 20px;
+    }
+
+    .product-image img {
+        width: 100%;
+        border-radius: 5px;
+    }
+
+    .product-details {
+        flex: 0 0 60%;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 1rem;
+    }
+
+    .product-details h2 {
+        font-size: 24px;
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+
+    .product-details p {
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+    .product-details h3{
+        text-align: left    ;
+    }
+    .product-price h4{
+        font-size: 1.1rem;
+        font-weight: bold;
+        color: #f39c12;
+    }
+
+    .product-description {
+        margin-bottom: 20px;
+        text-align: left;
+    }
+
+    .quantity_product {
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+    }
+    .quantity_product button{
+        padding:0 .7rem;
+        border: 1px solid rgba(0, 0, 0, 0.75);
+    }
+    .quantity_product button:hover{
+        border: 1px solid #36c3ff;
+    }
+    .quantity_product input {
+        width: 40px;
+        text-align: center;
+        padding: .2rem .5rem;
+        border-radius: .3rem;
+        border: 1px solid rgba(80, 80, 80, 0.75);
+    }
+
+
+    /*Sản phẩm bán chạy*/
+    #displayCategory {
+        margin-top: 2rem;
+        gap: 2rem;
+    }
+
+    #displayCategory span {
+        margin-bottom: 1rem;
+    }
+
+    #displayCategory .product:hover {
+        border: 1px solid #949494;
+        box-shadow: 0 0 10px 1px #808080;
+    }
+
+    #displayCategory .product {
+        width: 17rem;
+        border: 2px solid #ffffff;
+    }
+
+    #displayCategory .product img {
+        scale: 80%;
+    }
+
+    /*giảm giá sốc*/
+    .box_listDiscount {
+        position: relative;
+        margin: 0 auto;
+        width: 67%;
+        height: 350px;
+        overflow: hidden;
+        margin-top: 1rem;
+    }
+
+    .box_listDiscount .listProducts {
+        margin: 0;
+        padding: 0;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        width: 100%;
+        position: absolute;
+    }
+
+    .image-container {
+        position: relative;
+        display: inline-block;
+
+    }
+
+    .discount-badge {
+        position: absolute;
+        top: 1rem;
+        left: .1rem;
+        background-color: #E74C3C;
+        color: white;
+        padding: .2rem .5rem;
+        border-radius: 50px;
+        font-size: 14px;
+        text-align: center;
+        z-index: 1;
+        font-size: 1.1rem;
+
+    }
+
+    .discount-text {
+        font-weight: bold;
+    }
+
+    .image-container img {
+        display: block;
+        width: 100%;
+        height: auto;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    /*danh mục sản phẩm*/
+    #form_scope_categoryProduct {
+        position: fixed;
+        top: 2%;
+        left: 20%;
+        background: transparent;
+        backdrop-filter: blur(30px);
+        box-shadow: 0 0 10px 3px black;
+        width: 60%;
+        height: 97%;
+        z-index: 99;
+    }
+
+    #form_scope_categoryProduct .listProducts button {
+        background: white;
+    }
+
+    #form_scope_categoryProduct .listProducts button:hover {
+        background: black;
+    }
+
+    #form_scope_categoryProduct #displayCategoryFilter {
+        position: absolute;
+        width: 100%;
+        padding: 0;
+        top: 10rem;
+        z-index: 100;
+
+    }
+
+    #form_scope_categoryProduct .form_back {
+        position: absolute;
+        top: 7rem;
+        left: 2rem;
+        padding: .5rem 1rem;
+        z-index: 110;
+        background: #1ea2ff;
+        font-size: 1rem;
+        font-weight: 600;
+        color: white;
+        border: 1px solid #0963a4;
+        border-radius: .7rem;
+    }
+
+    #form_scope_categoryProduct .form_back:hover {
+        border: 1px solid #1ea1fd;
+        box-shadow: inset 0 0 5px 2px #1ea1fd;
+        background: white;
+        color: #1ea2ff;
+    }
+
+    .hide {
+        display: none;
+    }
+
+    #form_scope_categoryProduct h1 {
+        text-align: center;
+        margin: 2rem 0 1rem;
+        text-transform: uppercase;
+        color: #292b38;
+    }
+
+
+    .search_add_scope .search_manage input {
+        background: #cecece;
+        color: black;
+        width: 300px;
+    }
+
+    .search_add_scope .search_manage button {
+        background: #cccccd;
+        color: rgba(28, 28, 28, 0.58);
+    }
+
+    .search_add_scope .search_manage button:hover {
+        background: #36c1fe;
+        color: #ffffff;
+    }
+
+    .search_manage {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: .7rem;
+        margin: .5rem 0;
+        font-size: 1rem;
+        color: white !important;
+
+    }
+
+    .search_manage input {
+        width: 30rem;
+        padding: .8rem .5rem .5rem;
+        border-top-left-radius: .7rem;
+        border-bottom-left-radius: .7rem;
+        border: 1px solid rgba(40, 40, 40, 0.82);
+        border-right: none;
+        background: white;
+        color: #1c1c1c;
+        font-size: 1rem;
+    }
+
+    .search_manage button {
+        padding: .47rem;
+        border-top-right-radius: .7rem;
+        border-bottom-right-radius: .7rem;
+        font-size: 1.25rem;
+        border: 1px solid rgba(40, 40, 40, 0.82);
+        background: white;
+        color: #1c1c1c;
+    }
+
+    .search_manage button:hover {
+        background: rgb(49, 157, 255);
+        color: white;
+    }
+
+    .form_search_home {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        padding: 0 2rem;
+        gap: 1rem;
+    }
+
+    #form_scope_categoryProduct .btn_home {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+
+    }
+
+    #form_scope_categoryProduct .btn_home button {
+        background: transparent;
+        border: none;
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+        color: #2d2d38;
+    }
+
+    #form_scope_categoryProduct .btn_home button:hover {
+        color: #e15656;
+    }
+
+    #form_scope_categoryProduct .btn_home i {
+        font-size: 1.7rem;
+
+    }
+
+    /*note*/
+    .information_note {
+        line-height: 35px;
+    }
+
+    .information_note i {
+        font-size: 2.5rem;
+        color: #565656;
+        padding: .5rem;
+    }
+
+    .information_note h3 {
+        padding: 1rem;
+    }
+
+    .information_note .vertical {
+        background: rgba(128, 128, 128, 0.35);
+        width: .01rem;
+        height: 16rem;
+    }
+
+    .information_note {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        align-items: center;
+        margin-top: 5rem;
+    }
+
+    .information_note .divNote {
+        text-align: center;
+        font-size: 1rem;
+    }
+
+    /*đánh giá*/
+    main .reviews {
+        background: #292b38;
+        height: 600px;
+        position: relative;
+        text-align: center;
+
+    }
+
+    main .reviews h1 {
+        color: white;
+        text-transform: uppercase;
+        padding: 3rem 0 1rem;
+    }
+
+    main .reviews p {
+        font-size: 1rem;
+    }
+
+    main .box_reviews {
+        margin-top: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    main .box_reviews .box_chat {
+        background: white;
+        position: relative;
+        padding: 4rem 2rem;
+        line-height: 30px;
+    }
+
+    main .box_reviews .box_chat img {
+        width: 90px;
+        border-radius: 50%;
+    }
+
+    main .reviews .box_chat h3 {
+        padding-top: 1rem;
+    }
+
+    /*Kinh nghiệm hay*/
+    .swiper-container {
+        width: 1100px;
+        height: 400px;
+        margin: 0 auto;
+        overflow: hidden;
+        padding-top: 4rem;
+    }
+
+    .swiper-slide {
+        text-align: center;
+        font-size: 30px;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .swiper-slide img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+    }
+
+    .swiper-wrapper .swiper-slide h6 {
+        margin-top: 2rem;
+        color: #292b38;
+    }
+
+    .swiper-wrapper .swiper-slide:hover {
+        scale: 103%;
+    }
+
+    /*lên đầu trang*/
+    footer .scroll_top button {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 99;
+        font-size: 18px;
+        border: none;
+        outline: none;
+        background-color: #000;
+        color: #fff;
+        cursor: pointer;
+        padding: 15px;
+        border-radius: 1rem;
+        opacity: 0.5;
+        transition: opacity 0.3s;
+    }
+
+    footer .scroll_top button:hover {
+        opacity: 1;
+    }
+
+    /*cuối trang*/
+    footer .footer_brg {
+        background-image: url("../image/bg-about.png");
+        background-repeat: no-repeat;
+        background-position: bottom;
+        background-size: cover;
+        height: 150px;
+    }
+
+    .footer_end {
+        background: #292b37;
+        height: 350px;
+        display: flex;
+        justify-content: center;
+        gap: 10rem;
+        align-items: start;
+        padding: 3rem 0;
+    }
+
+    footer .footer_end .address_id {
+        color: white;
+        line-height: 25px;
+    }
+
+    footer .footer_end .address img {
+        padding-bottom: 2rem;
+    }
+
+    footer .address_id .footer_icon {
+        padding: 1rem 0;
+    }
+
+    footer .address_id .footer_icon i {
+        border: 2px solid white;
+        border-radius: 50%;
+        width: 2rem;
+        height: 2rem;
+        text-align: center;
+        line-height: 1.8rem;
+        margin: .15rem;
+    }
+
+    footer .footer_end .policy h2 {
+        text-transform: uppercase;
+        font-size: 2rem;
+        padding: 2rem 0 3rem;
+    }
+
+    footer .footer_end .policy a {
+        color: white;
+    }
+
+    footer .footer_end .policy {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        color: white;
+        line-height: 25px;
+    }
+
+    footer .footer_end .policy img {
+        margin: 1rem 0;
+
+    }
+
+    footer .footer_end .address_show {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        color: white;
+        line-height: 25px;
+    }
+
+    footer .footer_end .address_show h2 {
+        text-transform: uppercase;
+        font-size: 2rem;
+        padding: 2rem 0 3rem;
+    }
+
+    /*end*/
+    footer .end {
+        background: #1c1c1c;
+        color: white;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    footer .end span {
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+}

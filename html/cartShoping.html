@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="../css/cartShoping.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="../css/home.css">
+
+
+</head>
+<body>
+<aside>
+    <p>nhập mã blackfriday để giảm 10%</p>
+    <div class="time_phone">
+        <p><i class="fa-regular fa-clock"></i> <span id="clock"></span></p>
+        <div class="vertical"></div>
+        <p><i class="fa-solid fa-phone"></i> <span>0363304513</span></p>
+    </div>
+    <div class="icon">
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+</aside>
+<header>
+    <div class="tap_bar">
+        <div class="login_search">
+            <img src="../image/logo/Group%209.png" width="350" height="100">
+            <div class="icon_input">
+                <input type="search" placeholder="Tìm kiếm sản phẩm" id="input_search_home">
+                <button type="button" onclick="searchHome()"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+            <div class="login">
+                <div id="user_show_home">
+                    <h2 id="load_name">Xin chào</h2>
+                    <img id="load_img" src="#" alt="Avatar">
+                    <ul>
+                        <li>
+                            <a id="setting_user" href="#"><i class="fa-solid fa-gear"></i></a>
+                            <ul>
+                                <li class="popup_text"><a href="#">Tài Khoản</a></li>
+                                <hr>
+                                <li class="popup_text"><a href="" onclick="clickLogoutHome(event)">Đăng Xuất</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="vertical"></div>
+                <h2>
+                    <a href="html/cartShoping.html"><i class="fa-sharp fa-solid fa-bag-shopping"></i>
+                        <sup id="count_number">0</sup>
+                    </a>
+                </h2>
+            </div>
+        </div>
+        <!--*-->
+        <nav>
+            <ul>
+                <li class="tap_bar_text"><a href="../index.html">
+                    <i class="fa-solid fa-house"></i>
+                    trang chủ
+                </a>
+                </li>
+                <li><a href="#">cửa hàng <i class="fa-solid fa-bars"></i></a>
+                    <ul>
+                        <li class="popup_text"><a href="#">Điện Thoại</a></li>
+                        <hr>
+                        <li class="popup_text"><a href="#">Tai Nghe</a></li>
+                        <hr>
+                        <li class="popup_text"><a href="#">Máy Tính</a></li>
+                        <hr>
+                        <li class="popup_text"><a href="#">Đồng Hồ</a></li>
+                    </ul>
+                </li>
+                <li class="tap_bar_text"><a href="https://dantri.com.vn/">bài viết</a></li>
+                <li class="tap_bar_text"><a href="html/introduce.html">giới thiệu</a></li>
+                <li class="tap_bar_text"><a href="html/contact.html">liên hệ</a></li>
+            </ul>
+        </nav>
+    </div>
+
+</header>
+<!--*-->
+<h1 class="section-title section-title-discount">
+    <b></b>
+    <span>Giỏ Hàng</span>
+    <b></b>
+</h1>
+<!--*-->
+
+
+<div class="container">
+    <div class="cart-items">
+        <h2>Chi tiết giỏ hàng</h2>
+        <table border="1">
+            <thead>
+            <tr>
+                <th>STT</th>
+                <th>Sản phẩm</th>
+                <th>Giá</th>
+                <th>Số lượng</th>
+                <th>Tổng cộng</th>
+                <th>Tùy Chọn</th>
+            </tr>
+            </thead>
+            <tbody id="drawTableCart">
+
+            </tbody>
+        </table>
+        <div class="footer">
+            <a href="../index.html">Quay Lại Trang Chủ</a>
+            <div id="total"></div>
+        </div>
+
+    </div>
+
+    <div class="checkout">
+        <h2>Thanh toán</h2>
+        <h3>Thông tin thanh toán của bạn:</h3>
+        <form>
+            <label for="name_order">Họ và tên:</label>
+            <input type="text" id="name_order" name="name" required><br><br>
+            <label for="email_order">Email:</label>
+            <input type="email" id="email_order" name="email"><br><br>
+            <label for="address_order">Địa chỉ:</label>
+            <textarea id="address_order" name="address" required></textarea><br><br>
+            <label for="card">Số thẻ:</label>
+            <input type="text" id="card" name="card" required><br><br>
+            <input type="submit" onclick="handleCheckOut()" value="Thanh toán" class="checkout-btn">
+        </form>
+    </div>
+</div>
+<footer>
+    <div class="scroll_top">
+        <button onclick="scrollToTop()" id="scrollBtn"><i class="fa-solid fa-angles-up"></i></button>
+    </div>
+    <div class="footer_brg"></div>
+    <div class="footer_end">
+        <div class="address_id">
+            <img src="../image/logo/Group%2010.png" width="350" height="100">
+            <h3>Cứ có tiền là làm !</h3>
+            <p><i class="fa-solid fa-location-dot"></i> <span> Số 56B Ngõ 896,đường Nguyễn Khoái,Thanh Trì,<br>Hoang Mai,Hà Nội</span>
+            </p>
+            <p><i class="fa-solid fa-mobile-screen-button"></i> 036.330.4513 - 0973.903.986</p>
+            <p><i class="fa-solid fa-envelope"></i> kts.duongvietanh@gmail.com</p>
+            <div class="footer_icon">
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-google-plus-g"></i>
+                <i class="fa-brands fa-youtube"></i>
+            </div>
+        </div>
+        <!--*-->
+        <div class="policy">
+            <h2>quy đinh & chính sách</h2>
+            <a href="#">Quy định đổi trả hàng hóa</a>
+            <a href="#">Quy định bảo hành hàng mới</a>
+            <a href="#">Quy định bảo hành hàng cũ</a>
+            <a href="#">Chính sách bảo mật</a>
+            <img src="image/bct.png" width="180px">
+        </div>
+        <!--*-->
+        <div class="address_show">
+            <h2>địa chỉ cửa hàng</h2>
+            <p>Chi nhánh Hà Nội:</p>
+            <p>Số 1, Hàng Đào</p>
+            <p>Chi nhánh HCM:</p>
+            <p>Tầng 1, Landmark 81</p>
+            <p>Chi nhánh Đà Nẵng:</p>
+
+        </div>
+    </div>
+    <!--*-->
+    <div class="end">
+        <p>Copyright © 2023 <span>Grin</span> Rights reserved | Thiết kế website</p>
+    </div>
+</footer>
+</body>
+</html>
+<script src="../js/home.js"></script>
+<script src="../js/cartShoping.js"></script>
+<script src="../js/addCart.js"></script>
